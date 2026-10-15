@@ -718,3 +718,43 @@ footer .wrap {
         transform: none
     }
 }
+.hero-name {
+    display: inline-grid;
+    vertical-align: bottom;
+    position: relative;
+}
+
+.hero-name .name-placeholder,
+.hero-name .name-typed {
+    grid-area: 1 / 1;
+}
+
+.hero-name .name-placeholder {
+    visibility: hidden;
+}
+
+.hero-name .name-typed {
+    position: relative;
+}
+
+.hero-name .name-cursor {
+    display: inline-block;
+    width: 3px;
+    height: 0.85em;
+    margin-left: 4px;
+    background: currentColor;
+    vertical-align: baseline;
+    animation: name-cursor-blink 0.75s step-end infinite;
+}
+
+@keyframes name-cursor-blink {
+    50% {
+        opacity: 0;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .hero-name .name-cursor {
+        display: none;
+    }
+}
